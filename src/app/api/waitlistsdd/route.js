@@ -22,8 +22,10 @@ export async function POST(req) {
       api_key: API_KEY,
       email: email,
     };
+    console.log(data);
+    console.log(email);
 
-    const response = await axios.post(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",

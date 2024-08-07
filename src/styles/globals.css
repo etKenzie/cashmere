@@ -3,6 +3,7 @@
 
 @import "@/styles/components/signin-button.css";
 @import "@/styles/components/signout-button.css";
+@import "@/styles/components/email-form.css";
 
 @tailwind base;
 @tailwind components;

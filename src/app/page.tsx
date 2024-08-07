@@ -8,8 +8,11 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Waitlist />
+      <div>
+        <Hero />
+        <Waitlist />
+      </div>
+
       <Footer />
     </>
   );
