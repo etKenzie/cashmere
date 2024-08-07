@@ -1,7 +1,7 @@
 const API_KEY = process.env.MAILCHIMP_API_KEY;
 const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
 const SERVER = "us13";
-const error_message = `There was a problem, please try again.`;
+const error_message = `There was a problem, please try again later.`;
 const success_message = `🎉 You have been added to the wait list!`;
 
 export default async function handler(req, res) {
@@ -24,8 +24,6 @@ export default async function handler(req, res) {
       status: "subscribed",
     }),
   });
-
-  console.log(response);
 
   if (response.status == 200) {
     return res.status(200).json({ message: success_message });
