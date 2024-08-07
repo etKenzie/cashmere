@@ -22,10 +22,15 @@ const EmailForm = () => {
 
       const response = await res.json();
 
-      if (res.status == 200) {
-        setMessage(response.message);
-        setHasSubmitted(true);
-      }
+      setMessage(response.message);
+      setHasSubmitted(true);
+
+      // if (res.status == 200) {
+      //   setMessage(response.message);
+      //   setHasSubmitted(true);
+      // }else {
+      //   setMessage()
+      // }
 
       setEmail("");
     } catch (e) {}
