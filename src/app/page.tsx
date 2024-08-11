@@ -1,3 +1,5 @@
+import About from "@/components/page-elements/About";
+import Faq from "@/components/page-elements/Faq";
 import Footer from "@/components/page-elements/Footer";
 import Hero from "@/components/page-elements/Hero";
 import Navbar from "@/components/page-elements/Navbar";
@@ -10,6 +12,8 @@ export default function Home() {
       <Navbar />
       <div>
         <Hero />
+        {/* <Faq /> */}
+        {/* <About /> */}
         <Waitlist />
       </div>
 

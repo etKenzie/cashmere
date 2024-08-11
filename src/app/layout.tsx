@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <ClerkProvider>
         <body suppressHydrationWarning={true}>
           <main className="relative overflow-hidden">{children}</main>

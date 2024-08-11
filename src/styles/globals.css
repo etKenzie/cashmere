@@ -1,6 +1,7 @@
 @import "@/styles/base/base.css";
 @import "@/styles/base/typography.css";
 
+@import "@/styles/components/hero.css";
 @import "@/styles/components/signin-button.css";
 @import "@/styles/components/signout-button.css";
 @import "@/styles/components/email-form.css";
@@ -12,6 +13,9 @@
 @layer utilities {
   .btn_white {
     @apply border-white bg-white px-8 py-3 text-green-50;
+  }
+  .btn_black {
+    @apply border-black bg-white px-8 py-3 text-black hover:bg-black hover:text-white;
   }
   .btn_white_text {
     @apply border-white bg-white px-8 py-3 text-gray-90;

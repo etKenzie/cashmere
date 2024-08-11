@@ -3,7 +3,8 @@ export const NAV_LINKS = [
   // { href: "/", key: "how_hilink_work", label: "How Hilink Work?" },
   // { href: "/", key: "services", label: "Services" },
   // { href: "/", key: "pricing ", label: "Pricing " },
-  { href: "/", key: "contact_us", label: "Contact Us" },
+  { href: "/about", key: "about_us", label: "About Us" },
+  { href: "/contact", key: "contact_us", label: "Contact Us" },
 ];
 
 // CAMP SECTION
@@ -52,17 +53,17 @@ export const FOOTER_LINKS = [
     title: "Learn More",
     links: [
       "About",
-      "Press Releases",
-      "Environment",
+      // "Press Releases",
+      // "Environment",
       "Jobs",
       "Privacy Policy",
       "Contact Us",
     ],
   },
-  {
-    title: "Our Community",
-    links: ["Something here", "Another thing", "Maybe another"],
-  },
+  // {
+  //   title: "Our Community",
+  //   links: ["Something here", "Another thing", "Maybe another"],
+  // },
 ];
 
 export const FOOTER_CONTACT_INFO = {

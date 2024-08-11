@@ -8,7 +8,8 @@ const Waitlist = () => {
         <div className="flex flex-col gap-3">
           <h2 className="xl:bold-40 bold-32">Join our Waitlist today!</h2>
           <p className="text-gray-30">
-            Keep informed for when we release our product!
+            Keep updated with our progress and get notified to be potential beta
+            testers!
           </p>
         </div>
 
