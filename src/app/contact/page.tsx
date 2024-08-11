@@ -11,10 +11,10 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col max-container padding-container py-10 pb-32 md:gap-28 lg:py-20 mb-24">
+      <div className="flex flex-col max-container padding-container py-10 pb-32 gap-28 lg:py-20 mb-24">
         <Header />
         <div className="flex justify-center">
-          <div className="flex flex-col lg:flex-row lg:w-11/12">
+          <div className="flex flex-col gap-4 lg:gap-0 lg:flex-row lg:w-11/12">
             <div className="flex-1 flex flex-col gap-4">
               <h1 className="bold-32">Reach Out</h1>
               <p className="w-4/5">
