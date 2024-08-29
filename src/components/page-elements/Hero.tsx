@@ -25,7 +25,11 @@ const Hero = () => {
           with your workflow and seamlessly generates patient diagnosis.
         </p>
         <div className="flex w-max gap-3 sm:flex-row mt-10">
-          <Button type="button" title="Get Diagnosed" variant="btn_black ho" />
+          <Button
+            type="button"
+            title="Get Diagnosed"
+            variant="btn_black bold-16"
+          />
         </div>
       </div>
       <div className="relative flex-1 items-start">

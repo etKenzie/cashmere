@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" data-theme="light">
       <ClerkProvider>
         <body suppressHydrationWarning={true}>
-          <main className="relative overflow-hidden">{children}</main>
+          <main className="">{children}</main>
         </body>
       </ClerkProvider>
     </html>
