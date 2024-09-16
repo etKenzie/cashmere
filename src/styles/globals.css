@@ -1,5 +1,6 @@
 @import "@/styles/base/base.css";
 @import "@/styles/base/typography.css";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 @import "@/styles/components/hero.css";
 @import "@/styles/components/signin-button.css";
@@ -10,32 +11,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .btn_white {
-    @apply border-white bg-white px-8 py-3 text-green-50;
-  }
-  .btn_black {
-    @apply border-black bg-white px-8 py-3 text-black hover:bg-black hover:text-white;
-  }
-  .btn_white_text {
-    @apply border-white bg-white px-8 py-3 text-gray-90;
-  }
-  .btn_green {
-    @apply border-green-50 bg-green-50 px-8 py-5 text-white;
-  }
-  .btn_dark_green {
-    @apply bg-green-90 px-8 py-4 text-white transition-all hover:bg-black;
-  }
-  .btn_dark_green_outline {
-    @apply border-gray-20 bg-green-90 px-8 py-5 text-white;
-  }
+:root {
+  --font-lato-light: "Lato", sans-serif;
+}
 
+@layer utilities {
   .max-container {
     @apply mx-auto max-w-[1440px];
   }
 
   .padding-container {
     @apply px-6 lg:px-20 3xl:px-0;
+  }
+
+  .btn_white {
+    @apply border-white bg-white px-8 py-3 text-green-50;
+  }
+  .btn_navy {
+    @apply border-blue-dark font-btn bg-blue-dark px-8 py-4 text-white hover:bg-black hover:text-white;
+  }
+  .btn_white_text {
+    @apply border-white bg-white px-8 py-3 text-gray-90;
+  }
+
+  .font-btn {
+    @apply font-roboto text-[14px] md:text-[16px] font-[600] leading-[120%];
   }
 
   .flexCenter {
@@ -141,6 +141,38 @@
   /* Get App */
   .get-app {
     @apply max-container relative flex w-full  flex-col justify-between gap-32 overflow-hidden bg-green-90 bg-pattern bg-cover bg-center bg-no-repeat px-6 py-12 text-white sm:flex-row sm:gap-12 sm:py-24 lg:px-20 xl:max-h-[598px] 2xl:rounded-5xl;
+  }
+
+  /* PERSONAL */
+  .font-heading {
+    @apply font-serif text-[40px] md:text-[56px] font-[600] leading-[120%];
+  }
+
+  .font-subheading {
+    @apply font-latoLight text-[16px] font-[400] md:text-[20px] leading-[140%];
+  }
+
+  .font-small {
+    @apply font-roboto text-[12px] md:text-[14px];
+  }
+  .font-medium {
+    @apply font-lato text-[16px] md:text-[20px];
+  }
+
+  .font-warning {
+    @apply font-roboto text-[10px] md:text-[12px];
+  }
+
+  .font-section-title {
+    @apply font-lato text-[14px] md:text-[16px] font-[600] leading-[120%];
+  }
+
+  .font-process-title {
+    @apply font-lato text-[24px] md:text-[32px] font-[600] leading-[120%];
+  }
+
+  .font-nav-link {
+    @apply font-lato text-[14px] md:text-[16px] font-[300] leading-[120%];
   }
 }
 

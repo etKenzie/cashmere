@@ -2,8 +2,7 @@
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "../items/Button";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 import { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { FaTimes } from "react-icons/fa";
@@ -30,58 +29,42 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="flexBetween max-container padding-container z-50 py-4 sticky top-0  backdrop-blur-md bg-gradient-to-b from-white/70 to-transparent">
-      <Link href="/">
-        {/* {<Image src="/" alt="logo" width={74} height={29}></Image>} */}
-        <b>CASHMERE</b>
-        health
-      </Link>
-      <ul className="hidden h-full gap-12 lg:flex">
-        {NAV_LINKS.map((link) => (
-          <Link
-            href={link.href}
-            key={link.key}
-            className="regular-14 text-gray-500 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </ul>
-      {/* <SignedOut>
-        <div className="lg:flexCenter hidden">
-          <SignInButton>
-            <Button
-              type="button"
-              title="Sign In"
-              variant="btn_dark_green"
-              icon="/user.svg"
-            ></Button>
-          </SignInButton>
-        </div>
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn> */}
-      {/* <div className="lg:flexCenter hidden">
-        <SigninButton className="btn_dark_green" icon="/user.svg">
-          Login
-        </SigninButton>
-      </div> */}
+    <nav className="fixed top-0 left-0 w-full z-50  backdrop-blur-md bg-gradient-to-b">
+      <div className="flex justify-between items-center max-container padding-container py-2">
+        <Link href="/" className="self-center flex items-center">
+          {<Image src="/Logo.svg" alt="logo" width={40} height={20}></Image>}
+          <div className="hidden lg:block">
+            <b>CASHMERE</b>
+            health
+          </div>
+        </Link>
+        <ul className="hidden h-full gap-12 lg:flex">
+          {NAV_LINKS.map((link) => (
+            <Link
+              href={link.href}
+              key={link.key}
+              className="font-nav-link flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </ul>
 
-      <div className="lg:flexCenter hidden">
+        {/* <div className="lg:flexCenter hidden">
         <Button
           type="button"
-          title="Diagnosis"
-          variant="px-5 py-2 border-black text-sm font-semibold transition-all hover:bg-black hover:text-white"
+          title="Try it Out"
+          variant="px-5 py-2 border-black text-sm font-semibold transition-all hover:bg-black hover:text-white rounded-full"
           // icon="/message.svg"
         ></Button>
+      </div> */}
+
+        <button className="block lg:hidden transition" onClick={toggleNav}>
+          {showNav ? <FaTimes /> : <CiMenuFries />}
+        </button>
+
+        {showNav && content}
       </div>
-
-      <button className="block sm:hidden transition" onClick={toggleNav}>
-        {showNav ? <FaTimes /> : <CiMenuFries />}
-      </button>
-
-      {showNav && content}
     </nav>
   );
 };
