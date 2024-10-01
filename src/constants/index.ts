@@ -3,7 +3,7 @@ export const NAV_LINKS = [
   // { href: "/", key: "how_hilink_work", label: "How Hilink Work?" },
   // { href: "/", key: "services", label: "Services" },
   // { href: "/", key: "pricing ", label: "Pricing " },
-  { href: "/about", key: "about_us", label: "About Us" },
+  // { href: "/about", key: "about_us", label: "About Us" },
   { href: "/contact", key: "contact_us", label: "Contact Us" },
 ];
 
@@ -52,7 +52,7 @@ export const FOOTER_LINKS = [
   {
     title: "Learn More",
     links: [
-      "About",
+      // "About",
       // "Press Releases",
       // "Environment",
       "Jobs",

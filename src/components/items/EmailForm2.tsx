@@ -8,7 +8,7 @@ interface Props {
   className?: string;
 }
 
-const EmailForm = ({ className }: Props) => {
+const EmailForm2 = ({ className }: Props) => {
   const [email, setEmail] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [message, setMessage] = useState("");
@@ -41,13 +41,13 @@ const EmailForm = ({ className }: Props) => {
   };
 
   return (
-    <div className={`flex flex-col gap-2 w-full text-right ${className}`}>
-      <form className="flex justify-end" onSubmit={submit}>
+    <div className={`flex flex-col gap-2 ${className}`}>
+      <form className="flex flex-col lg:flex-row gap-4" onSubmit={submit}>
         <input
           id="newsletter-input"
           type="email"
           name="email"
-          className="email-form-input w-full md:max-w-[450px] h-14 pl-5 text-sm  bg-background"
+          className="xl:w-96 h-14 pl-5 text-sm rounded-lg border-2 border-black"
           placeholder="Subscribe your email"
           aria-label="Enter Email Address"
           value={email}
@@ -58,17 +58,15 @@ const EmailForm = ({ className }: Props) => {
         />
         <button
           type="submit"
-          className="email-form-button w-12 h-14 font-medium text-2xl pl-2"
+          className="h-14 font-medium text-sm px-4 bg-slate-900 text-white rounded-lg"
           id="newsletter-btn"
         >
-          <HiArrowNarrowRight />
+          Join the Waitlist
         </button>
       </form>
-      <div>
-        {hasSubmitted && <span className="font-semibold">{message}</span>}
-      </div>
+      <div>{hasSubmitted && <span className="bold-16">{message}</span>}</div>
     </div>
   );
 };
 
-export default EmailForm;
+export default EmailForm2;

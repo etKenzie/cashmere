@@ -5,12 +5,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flexCenter mb-24">
+    <footer className="flexCenter pb-24">
       <div className="padding-container max-container flex w-full flex-col gap-14">
         <div className="flex flex-col items-start justify-center gap-8 md:gap-[10%] md:flex-row">
           <Link href="/" className="mb-10">
             {/* <Image src='' alt='logo' width={74} height={29} /> */}
-            <div>
+            <div className="font-serif">
               <b>CASHMERE</b>
               health
             </div>
@@ -19,9 +19,13 @@ const Footer = () => {
           <div className="flex flex-wrap gap-10 sm:justify-between md:flex-1">
             {FOOTER_LINKS.map((columns) => (
               <FooterColumn title={columns.title} key="">
-                <ul className="regular-14 flex flex-col gap-4 text-gray-30">
+                <ul className="flex flex-col gap-4 ">
                   {columns.links.map((link) => (
-                    <Link href="/" key={link}>
+                    <Link
+                      href="/"
+                      key={link}
+                      className="text-gray-30 font-nav-link hover:font-bold"
+                    >
                       {link}
                     </Link>
                   ))}
@@ -35,12 +39,10 @@ const Footer = () => {
                 <Link
                   href="/"
                   key={link.label}
-                  className="flex gap-4 md:flex-col lg:flex-row"
+                  className="flex gap-4 md:flex-col lg:flex-row font-nav-link "
                 >
-                  <p className="whitespace-nowrap">{link.label}:</p>
-                  <p className="whitespace-nowrap medium-14 text-blue-70">
-                    {link.value}
-                  </p>
+                  <p className="whitespace-nowrap font-bold">{link.label}:</p>
+                  <p className="whitespace-nowrap text-blue-70">{link.value}</p>
                 </Link>
               ))}
             </FooterColumn>
@@ -73,8 +75,8 @@ type FooterColumnProps = {
 
 const FooterColumn = ({ title, children }: FooterColumnProps) => {
   return (
-    <div className="flex flex-col gap-5">
-      <h4 className="bold-18 whitespace-nowrap">{title}</h4>
+    <div className="flex flex-col gap-5 ">
+      <h4 className="bold-18 whitespace-nowrap font-serif">{title}</h4>
       {children}
     </div>
   );

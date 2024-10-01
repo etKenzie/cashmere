@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display, Lato, Roboto } from "next/font/google";
 import "@/styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+const lato = Lato({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-lato",
+});
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: "Cashmere",
@@ -16,12 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
-      <ClerkProvider>
-        <body suppressHydrationWarning={true}>
-          <main className="">{children}</main>
-        </body>
-      </ClerkProvider>
+    <html lang="en">
+      <body
+        suppressHydrationWarning={true}
+        className={`${inter.variable} ${playfair.variable} ${lato.variable} ${roboto.variable} font-sans`}
+      >
+        <main className="bg-background">{children}</main>
+      </body>
     </html>
   );
 }

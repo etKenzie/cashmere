@@ -27,12 +27,12 @@ const ContactForm = ({ className }: Props) => {
   return (
     <form className={`flex flex-col gap-8 ${className}`} onSubmit={onSubmit}>
       <div>
-        <div className="label font-semibold">
-          <span className="label-text">Full Name*</span>
+        <div className="label font-semibold mb-2">
+          <span className="font-section-title">Full Name*</span>
           {/* <span className="label-text-alt">Top Right label</span> */}
         </div>
         <input
-          className="input w-full input-bordered"
+          className="input w-full input-bordered text-input-padding"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -40,12 +40,12 @@ const ContactForm = ({ className }: Props) => {
         />
       </div>
       <div>
-        <div className="label font-semibold">
-          <span className="label-text">Email*</span>
+        <div className="label font-semibold mb-2">
+          <span className="font-section-title">Email*</span>
           {/* <span className="label-text-alt">Top Right label</span> */}
         </div>
         <input
-          className="input w-full input-bordered"
+          className="input w-full input-bordered text-input-padding"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -53,19 +53,22 @@ const ContactForm = ({ className }: Props) => {
         />
       </div>
       <div>
-        <div className="label font-semibold">
-          <span className="label-text">Message*</span>
+        <div className="label font-semibold mb-2">
+          <span className="font-section-title">Message*</span>
           {/* <span className="label-text-alt">Top Right label</span> */}
         </div>
         <textarea
-          className="textarea w-full textarea-bordered"
+          className="textarea w-full textarea-bordered text-input-padding"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
       </div>
 
-      <button className="btn btn-neutral" type="submit">
+      <button
+        className="btn btn-neutral border-2 border-black p-3 rounded-lg hover:bg-black hover:text-white"
+        type="submit"
+      >
         Submit
       </button>
     </form>
