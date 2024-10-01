@@ -19,6 +19,8 @@ export default function Home() {
         <Waitlist />
         <Footer />
       </div>
+
+      {/* <Footer /> */}
     </>
   );
 }

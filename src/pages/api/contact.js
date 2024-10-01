@@ -40,15 +40,20 @@ export default async function handler(req, res) {
 
   try {
     const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: [email], // Replace with your email
-      subject: "Contact Email Submission",
+      from: "User Message<message@cashmerehealth.com>",
+      to: ["cashmerehealthinitial@gmail.com"], // Replace with your email
+      subject: "User Message",
       html: html,
     });
 
+    // console.log("Email sent successfully:", data);
     res.status(200).json({ success: true, message: "Email sent successfully" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Failed to send email" });
+    // console.error("Failed to send email:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to send email",
+      error: error.message,
+    });
   }
 }
