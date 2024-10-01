@@ -11,25 +11,42 @@ const ContactForm = ({ className }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitStatus("idle");
     try {
       const res = await fetch("/api/contact", {
         headers: { "Content-Type": "application/json; charset=utf-8" },
         method: "POST",
         body: JSON.stringify({ name, email, message }),
       });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitStatus("success");
+        // Clear the form
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setSubmitStatus("error");
+      }
     } catch (err) {
       console.log(err);
+      setSubmitStatus("error");
     }
   };
+
   return (
     <form className={`flex flex-col gap-8 ${className}`} onSubmit={onSubmit}>
       <div>
         <div className="label font-semibold mb-2">
           <span className="font-section-title">Full Name*</span>
-          {/* <span className="label-text-alt">Top Right label</span> */}
         </div>
         <input
           className="input w-full input-bordered text-input-padding"
@@ -42,7 +59,6 @@ const ContactForm = ({ className }: Props) => {
       <div>
         <div className="label font-semibold mb-2">
           <span className="font-section-title">Email*</span>
-          {/* <span className="label-text-alt">Top Right label</span> */}
         </div>
         <input
           className="input w-full input-bordered text-input-padding"
@@ -55,7 +71,6 @@ const ContactForm = ({ className }: Props) => {
       <div>
         <div className="label font-semibold mb-2">
           <span className="font-section-title">Message*</span>
-          {/* <span className="label-text-alt">Top Right label</span> */}
         </div>
         <textarea
           className="textarea w-full textarea-bordered text-input-padding"
@@ -71,6 +86,15 @@ const ContactForm = ({ className }: Props) => {
       >
         Submit
       </button>
+
+      {submitStatus === "success" && (
+        <p className="font-semibold mt-2">Message sent successfully!</p>
+      )}
+      {submitStatus === "error" && (
+        <p className="text-red-600 mt-2">
+          Failed to send message. Please try again.
+        </p>
+      )}
     </form>
   );
 };
